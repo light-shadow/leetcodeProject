@@ -1,3 +1,3 @@
 # leetcodeProject
 
-leecode刷题联系
+leecode刷题练习
