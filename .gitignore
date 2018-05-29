@@ -1,6 +1,9 @@
 # ---> Java
 # Compiled class file
 *.class
+.iml
+/out/
+/target/
 
 # Log file
 *.log
