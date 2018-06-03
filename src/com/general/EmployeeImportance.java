@@ -5,6 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *  No.690
+ * 员工重要性
+ *
+ */
 public class EmployeeImportance {
     public static void main(String[] args) {
 
