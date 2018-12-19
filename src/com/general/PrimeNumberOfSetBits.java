@@ -10,20 +10,19 @@ public class PrimeNumberOfSetBits {
     }
     private static int countPrimeSetBits(int L, int R) {
         // 循环遍历这个边界
+        // 将边界内的数转换为2进制
+        // 找出二进制中1的个数
+        // 判断1的个数是否为素数 计算1的个数为素数的和
         int count= 0;
         for(int i=L;i<=R;i++){
-            // 将边界内的数转换为2进制
             String each = Integer.toBinaryString(i);
             int setNum = 0;
             for(int j=0;j<each.length();j++){
-
                 String eachL = each.substring(j,j+1);
-                // 找出二进制中1的个数
                 if(eachL.equalsIgnoreCase("1")){
                     setNum++;
                 }
             }
-            // 判断1的个数是否为素数 计算1的个数为素数的和
             if(isPrime(setNum)) count++;
         }
         return count;
