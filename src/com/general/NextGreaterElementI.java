@@ -1,5 +1,11 @@
 package com.general;
 
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * 496. Next Greater Element I
+ */
 public class NextGreaterElementI {
     public static void main(String[] args) {
         int[] num1 = {4,1,2}, num2 = {1,3,4,2};
