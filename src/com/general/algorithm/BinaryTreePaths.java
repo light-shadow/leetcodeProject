@@ -7,6 +7,8 @@ import com.general.structure.TreeNode;
 /**
  * 257. Binary Tree Paths
  * status: pass
+ *
+ *
  */
 public class BinaryTreePaths {
 
