@@ -19,29 +19,18 @@ import java.util.Map;
 public class ExcelSheetColumnNumber {
 
     public static void main(String[] args) {
-        System.out.println(26*26+25);
+        System.out.println(titleToNumber("AB"));
     }
 
-    public int titleToNumber(String s) {
-        Map<String, Object> map = getMap();
-
-        return 0;
-    }
-
-    public static Map<String, Object> getMap(){
-        Map<String, Object> map = new HashMap<>();
-        String[] alphabet = {
-                "A", "B", "C", "D", "E", "F", "G", "H", "I",
-                "J", "K", "L", "M", "N", "O", "P", "Q", "R,",
-                "S", "T", "U", "V", "W", "X", "Y", "Z"
-        };
-        int[] nums = {
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-                19, 20, 21, 22, 23, 24, 25, 26
-        };
-        for(int i=0;i<alphabet.length; i++){
-            map.put(alphabet[i], nums[i]);
+    public static int titleToNumber(String s) {
+        String reverse = new StringBuffer(s).reverse().toString();
+        int length = s.length();
+        int count = 0;
+        for(int i=0;i<length;i++){
+             int num = (int)reverse.charAt(i) - 64;
+             count += num*Math.pow(26, i);
         }
-        return map;
+        return count;
     }
+
 }
