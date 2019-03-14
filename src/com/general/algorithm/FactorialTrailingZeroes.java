@@ -3,6 +3,8 @@ package com.general.algorithm;
 import java.net.ServerSocket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 172. Factorial Trailing Zeroes
@@ -23,41 +25,24 @@ public class FactorialTrailingZeroes {
         int num2 = 5;
 //        System.out.println(trailingZeroes(5));
 //        System.out.println(trailingZeroes(7));
+        System.out.println(getFactor(7));
         System.out.println(getFactor(13));
     }
 
     public static int trailingZeroes(int n) {
         int factor = getFactor(n);
         String factorString = String.valueOf(factor);
-        int length = factorString.length();
         int count  = 0;
-        List<Integer> list = new ArrayList<>();
-        for(int i=length; i>=1;i--){
-            String each = factorString.substring(i-1, i);
-            if(each.equals("0")){
-                list.add(0);
-            }
-            else{
-                list.add(1);
-            }
-        }
-        int or = 1;
-        boolean flag = true;
-        for(Integer each: list){
-            or ^= each;
-            if(or == 1){
+        for(int i=0;i<factorString.length()-1;i++){
+            String each = factorString.substring(i, i+1);
+            if("0".equals(each)){
                 count++;
             }
-            else{
-                flag = false;
-            }
-            if(!flag){
-                break;
-            }
         }
-        return count;
+        return  count;
     }
     // 递归方式 容易栈溢出
+    @Deprecated
     public static int factor(int n){
         if(n == 1){
             return 1;
