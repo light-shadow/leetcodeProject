@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.IntStream;
+import  com.general.structure.TreeNode;
 
 /**
  * 965. Univalued Binary Tree
+ * status:pass
  */
 public class UnivaluedBinaryTree {
     public static void main(String[] args) {
