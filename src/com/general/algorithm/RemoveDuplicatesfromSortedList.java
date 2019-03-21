@@ -1,47 +1,34 @@
 package com.general.algorithm;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 83. Remove Duplicates from Sorted List
- * status:
+ * status: pass
+ * refrence: https://blog.csdn.net/happyaaaaaaaaaaa/article/details/48920813
  */
 public class RemoveDuplicatesfromSortedList {
 
     public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        ListNode head1 = new ListNode(1);
+        ListNode head2 = new ListNode(2);
+        ListNode head3 = new ListNode(2);
+        head.next = head1;
+        head1.next = head2;
+        head2.next = head3;
 
     }
 
-    public ListNode deleteDuplicates(ListNode head) {
-        List<Integer> list = new ArrayList<>();
-        while(head !=null){
-            int val = head.val;
-            if(!list.contains(val)){
-                list.add(val);
+    public static ListNode deleteDuplicates(ListNode head) {
+        ListNode newHead = head;
+        while(head != null && head.next!=null){
+            if(head.val == head.next.val){
+                head.next = head.next.next;
+            }
+            else{
+                head = head.next;
             }
         }
-        ListNode first = new ListNode(list.get(0));
-        for(int i=1;i<list.size();i++){
-            insert(first, list.get(i));
-        }
-        return first;
-    }
-
-    /**
-     * 在单链表中插入新的节点
-     * @param node
-     * @param data
-     */
-    public static void insert(ListNode node, int data) {
-        if (node == null) {
-            node = new ListNode(data);
-            return;
-        }
-        ListNode cur = node;
-        while (cur.next != null) {
-            cur = cur.next;
-        }
-        cur.next = new ListNode(data);
+        return newHead;
     }
 }
