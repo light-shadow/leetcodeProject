@@ -5,6 +5,7 @@ import java.util.Set;
 
 /**
  *929. Unique Email Addresses
+ * status: pass
  */
 public class UniqueEmailAddresses {
 
